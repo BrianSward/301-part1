@@ -1,20 +1,23 @@
 import React from 'react';
-import Grid from './Grid.js';
+// import Grid from './Grid.js';
+import HornedBeast from './HornedBeast.js';
 
 class Main extends React.Component {
   
-  constructor( props ) {
-    super(props);
-  }
-
-  render() {
+render() {
     return (
-      <div className="main">
-        <Grid/>
+      <div>
+      {this.props.data.map((x,i)=>(
+       <HornedBeast
+        title = {x.title}
+        image_url = {x.image_url}
+        desc = {x.description}
+          
+      /> 
+      ))}
       </div>
     )
   }
-
 }
 
 export default Main;

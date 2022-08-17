@@ -1,20 +1,31 @@
 import React from 'react';
+import Counter from './Counter.js'
 
 class HornedBeast extends React.Component {
   
   constructor( props ) {
     super(props);
+    this.state = {
+      count: 0
+    }
+  }
+
+  increment = (e) => {
+    let nextState = {
+      count: this.state.count+1
+    }
+    this.setState(nextState);
   }
 
   render() {
     return (
       <div className="item">
-        <title>Horned Beast</title>
-        <img src="https://via.placeholder.com/140x100" alt="placeholder" width="140" height="100"/>
-        <p>Description: A Horned Beast</p>        
+        <p>{this.props.title}</p>
+        <img src={this.props.image_url} width="300" alt="" onClick = {this.increment} />
+        <p>{this.props.desc}</p>
+        <p>❤️{this.state.count}</p>
       </div>
-    )
-  }
+  )}
 
 }
 
