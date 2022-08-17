@@ -18,6 +18,6 @@ Estimate of time needed to complete: 1 hours
 
 Start time: 2:00
 
-Finish time: 
+Finish time: 4:15
 
-Actual time needed to complete: 
+Actual time needed to complete: About an hour, I took breaks and helped classmates during the time
