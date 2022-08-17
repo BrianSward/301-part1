@@ -10,6 +10,7 @@ class Header extends React.Component {
     return (
       <header>
         <h1>Super Fun Title Action Time</h1>
+        <p>Click on the hearts to Like</p>
       </header>
     );
   }

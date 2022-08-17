@@ -1,5 +1,4 @@
 import React from 'react';
-import Counter from './Counter.js'
 
 class HornedBeast extends React.Component {
   
@@ -21,9 +20,9 @@ class HornedBeast extends React.Component {
     return (
       <div className="item">
         <p>{this.props.title}</p>
-        <img src={this.props.image_url} width="300" alt="" onClick = {this.increment} />
+        <img src={this.props.image_url} width="300" alt="" onClick = {this.props.onClick} />
         <p>{this.props.desc}</p>
-        <p>❤️{this.state.count}</p>
+        <p onClick = {this.increment}>❤️{this.state.count}</p>
       </div>
   )}
 
