@@ -2,6 +2,7 @@ import React from 'react';
 import HornedBeast from './HornedBeast.js';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 class Main extends React.Component {
   
@@ -9,7 +10,8 @@ class Main extends React.Component {
     super(props);
     this.state = {
       show: false,
-      selectedBeast: null
+      selectedBeast: null,
+      horns: [1,2,3, 'all', 'many']
     }
   }
   
@@ -25,6 +27,11 @@ class Main extends React.Component {
   render() {
     return (
       <>
+      <p>Filter Animals Below by Number of Horns</p>
+      <Form.Select aria-label="Default select example" onChange={this.props.handleFilter}>
+        {this.state.horns.map ((v,i)=>
+        <option key={i}>{v}</option>)}
+      </Form.Select>
      
       <div>
         {this.props.data.map((x,i)=>(
