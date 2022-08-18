@@ -9,18 +9,34 @@ class App extends React.Component {
     super(props);
     this.state = {
       show: false,
-      data: data
+      beastData: data
       
     }
   }
+  
+  filterdata = (event)=>{
+  let noOfHorns = event.target.value;
+  if (noOfHorns === 'all'){
+    this.setState({beastData: data})
+  } else if (noOfHorns === 'many'){
+    let filteredData = data.filter ((v)=> v.horns > 3)
+    this.setState({beastData: filteredData})
+  } else {
+    let parsedNumberOfHorns = parseInt(noOfHorns);
+    let filteredData = data.filter ((v,i)=> v.horns === parsedNumberOfHorns)
+    this.setState({beastData: filteredData})
+  };
+  }
+
   render () {
     return (
       <div className="App">
       <Header />
-      <Main data={data}/>
+      <Main data={this.state.beastData} handleFilter={this.filterdata}/>
       <Footer />
       </div>
     );
 }
 }
+
 export default App;
